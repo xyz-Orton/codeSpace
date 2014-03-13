@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="ConverterHelper.cs" />
     <Compile Include="ConvertUtility.cs" />
-    <Compile Include="CookieManager.cs" />
     <Compile Include="DataTableExtensions.cs" />
     <Compile Include="EncryptHelper.cs" />
     <Compile Include="EnglishCharConverter.cs" />
@@ -76,9 +75,6 @@
     <Compile Include="StringHelper.cs" />
     <Compile Include="ValidationHelper.cs" />
     <Compile Include="XmlExtensions.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CPTP.Utilities.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

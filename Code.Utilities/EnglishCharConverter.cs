@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     public class EnglishCharConverter
     {

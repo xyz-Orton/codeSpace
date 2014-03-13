@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PetaPoco">
+      <HintPath>..\Lib.Dtp\PetaPoco.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +44,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Code,DAL\Code.DAL.csproj">
+      <Project>{6C7C75DE-44CF-4642-BCC9-8A76DD96BDAA}</Project>
+      <Name>Code.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Code.Entities\Code.Entities.csproj">
+      <Project>{CCE57F95-EFB5-4E3D-AFB5-CD1780960869}</Project>
+      <Name>Code.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Code.Utilities\Code.Utilities.csproj">
+      <Project>{CD12E8EA-180D-4C74-BCED-99CD8323EEC6}</Project>
+      <Name>Code.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Reflection;
 using System.Data;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     public static class DataTableExtensions
     {

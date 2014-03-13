@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Reflection;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     /// <summary>
     /// 表示定义一组条件并确定指定对象是否能把 String 类型的字符串转换为特定的类型

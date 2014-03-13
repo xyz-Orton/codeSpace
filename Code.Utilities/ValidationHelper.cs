@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     public class ValidationHelper
     {

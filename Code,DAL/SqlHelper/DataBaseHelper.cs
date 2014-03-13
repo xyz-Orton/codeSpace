@@ -5,7 +5,7 @@ using System.Text;
 using System.Configuration;
 using PetaPoco;
 
-namespace Code_DAL.SqlHelper
+namespace Code_DAL
 {
     public class DataBaseHelper
     {

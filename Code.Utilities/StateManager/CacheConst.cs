@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GTA.SystemFramework.StateManager
+namespace Code.Utilities
 {
     /// <summary>
     /// Cache Names

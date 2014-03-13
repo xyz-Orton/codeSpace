@@ -14,7 +14,7 @@ using System.Data;
 using Aspose.Cells;
 using System.Drawing;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     /// <summary>
     /// 导出文件助手类

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
 
     public delegate void FormatField(FormatEventArgs args);

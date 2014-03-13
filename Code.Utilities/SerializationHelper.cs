@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Xml;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     /// <summary>
     /// XML序列化帮助类

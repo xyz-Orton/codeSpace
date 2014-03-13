@@ -64,19 +64,13 @@ body{
 	float:right;
 	display:inline;
 }
-.field{
-	margin:10px;
-}
-.field label{
-	float:left;
-	padding:6px;
-}
-.field input.text{
+
+input.text{
 	border:1px solid #c5c5c5;
 	padding:6px;
 	background:url(../images/field_text_bg.jpg) repeat-x left center;
 }
-.field .button{
+ .button{
 	background:url(../images/login_button.jpg) no-repeat left center;
 	border:none;
 	width:94px;

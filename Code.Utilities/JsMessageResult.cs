@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.WebPages;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     public class JsMessageResult : JsPageResult
     {

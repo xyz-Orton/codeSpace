@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     /// <summary>
     /// Excel单元格样式类型

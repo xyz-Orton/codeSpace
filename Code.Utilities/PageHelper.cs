@@ -6,7 +6,7 @@ using System.Web;
 using System.Net;
 using System.IO;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     /// <summary>
     /// 页面验证及处理类

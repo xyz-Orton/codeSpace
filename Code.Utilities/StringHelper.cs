@@ -14,7 +14,7 @@ using System.Net;
 using System.Globalization;
 using System.Web.Script.Serialization;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     /// <summary>
     /// 字符串处理相关帮助类

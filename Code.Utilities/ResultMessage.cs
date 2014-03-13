@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     /// <summary>
     /// 结果消息，用于响应客户端的请求

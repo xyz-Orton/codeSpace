@@ -5,7 +5,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     /// <summary>
     /// MD5加密

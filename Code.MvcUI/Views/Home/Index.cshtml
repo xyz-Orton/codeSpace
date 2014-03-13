@@ -1,5 +1,14 @@
-﻿@{
+﻿@using Code.MvcUI.Models
+@{
     Layout = null;
+    UserData userData = UserData.InitData();
+    string ID = "";
+    string Name = "";
+    if (userData != null)
+    {
+        ID = userData.ID.ToString();
+        Name = userData.UserName;
+    }
 }
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -72,7 +81,7 @@
             </ul>
         </div>
         <div class="top_member">
-            欢迎您，Admin | <a href="#">帐号管理</a> | <a href="#">充值</a> | <a href="#">编辑</a> | <a href="#">
+            欢迎您，@Name | <a href="#">帐号管理</a> | <a href="#">充值</a> | <a href="#">编辑</a> | <a href="#">
                 2条信息</a>
         </div>
     </div>

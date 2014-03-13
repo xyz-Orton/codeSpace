@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Web.Script.Serialization;
 using System.IO;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     public static class StringExtensions
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Linq;
 using System.IO;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     public static class XmlExtensions
     {

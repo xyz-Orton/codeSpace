@@ -5,7 +5,7 @@ using System.Text;
 using System.Web.Mvc;
 using System.Web;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     public class JsPageResult : ActionResult
     {

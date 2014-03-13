@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace CPTP.Utilities
+namespace Code.Utilities
 {
     /// <summary>
     /// ÀàÐÍ×ª»»
