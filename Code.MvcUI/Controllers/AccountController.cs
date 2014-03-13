@@ -7,6 +7,7 @@ using Code.MvcUI.Models;
 using Code.Utilities;
 using Code.BLL;
 using Code.Entities;
+using System.Web.Security;
 
 namespace Code.MvcUI.Controllers
 {
@@ -73,6 +74,14 @@ namespace Code.MvcUI.Controllers
             }
             return Json(new { Message = message, Success = flag });
 
+        }
+
+        public ActionResult LogOff()
+        {
+            System.Web.HttpContext.Current.Session.Abandon();
+
+            FormsAuthentication.SignOut();
+            return RedirectToAction("LogOn", "Account");
         }
     }
 }
