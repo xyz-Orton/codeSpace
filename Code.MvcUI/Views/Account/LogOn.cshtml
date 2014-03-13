@@ -53,6 +53,34 @@
 </body>
 </html>
 <script type="text/javascript">
+    $(function () {
+        InitPage();
+    });
+    function InitPage() {
+        $("#txtLoginName").on("keypress", function (evt) {
+            evt = (evt) ? evt : ((window.event) ? window.event : "") //兼容IE和Firefox获得keyBoardEvent对象  
+            var key = evt.keyCode ? evt.keyCode : evt.which; //兼容IE和Firefox获得keyBoardEvent对象的键值  
+            if (key == 13) { //判断是否是回车事件。 
+                var txtLoginName = $("#txtLoginName");
+                var txtLoginPwd = $("#txtLoginPwd");
+
+                if ($.trim(txtLoginName.val()) != "" && txtLoginPwd.val() == "") {
+                    txtLoginPwd.focus();
+                }
+                else {
+                    UserLogin();
+                }
+            }
+        });
+        $("#txtLoginPwd").on("keypress", function (evt) {
+            evt = (evt) ? evt : ((window.event) ? window.event : "") //兼容IE和Firefox获得keyBoardEvent对象  
+            var key = evt.keyCode ? evt.keyCode : evt.which; //兼容IE和Firefox获得keyBoardEvent对象的键值  
+            if (key == 13) { //判断是否是回车事件。 
+                UserLogin();
+            }
+        })
+    }
+
     var isSubmit = true;
     function UserLogin() {
         var loginName = $("#txtLoginName").val();
