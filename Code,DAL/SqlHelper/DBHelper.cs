@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace CPTP.DBUtility
+namespace Code.DAL
 {
     /// <summary>
     /// SqlHelper基类

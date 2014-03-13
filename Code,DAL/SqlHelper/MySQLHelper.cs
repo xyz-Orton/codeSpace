@@ -4,7 +4,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 
-namespace CPTP.DBUtility
+namespace Code.DAL
 {
     /// <summary>
     /// 数据访问基础类(基于MySQL)
