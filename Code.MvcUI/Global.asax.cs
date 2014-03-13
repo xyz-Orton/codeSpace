@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Code.MvcUI.Models;
 
 namespace Code.MvcUI
 {
@@ -12,6 +13,28 @@ namespace Code.MvcUI
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        public MvcApplication()
+        {
+            this.AcquireRequestState += new EventHandler(MvcApplication_AcquireRequestState);
+        }
+
+        public void MvcApplication_AcquireRequestState(object sender, EventArgs e)
+        {
+            HttpApplication application = (HttpApplication)sender;
+            if (application.Context.Handler is MvcHandler)
+            {
+                string strLoginUrl = application.Context.Request.Url.ToString();
+
+                //检测是否已登录
+                UserData user = UserData.InitData();
+                if (!strLoginUrl.Contains("/Account/LogOn") && user == null)
+                {
+                    application.Context.Response.Write("<script language='javascript'>top.location.href='/Account/LogOn'</script>");
+                    application.Context.Response.End();
+                }
+            }
+        }
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
