@@ -116,137 +116,83 @@ namespace Code.Entities
 
 
 
-    [TableName("tb_User")]
-
-
+    [TableName("tb_user")]
     [PrimaryKey("ID")]
-
     [ExplicitColumns]
-    public partial class tb_User : DefaultConnectionDB.Record<tb_User>
+    public partial class tb_user : DefaultConnectionDB.Record<tb_user>
     {
-
-
-
         [Column]
         public int ID { get; set; }
-
-
-
-
 
         [Column]
         public int? OrgID { get; set; }
 
-
-
-
-
         [Column]
         public string LoginName { get; set; }
-
-
-
-
 
         [Column]
         public string Password { get; set; }
 
-
-
-
-
         [Column]
         public string UserName { get; set; }
-
-
-
-
 
         [Column]
         public byte? UserType { get; set; }
 
-
-
-
-
         [Column]
         public byte? Sex { get; set; }
-
-
-
-
-
-        [Column]
-        public string Mobile { get; set; }
-
-
-
-
 
         [Column]
         public string Telephone { get; set; }
 
-
-
-
-
         [Column]
         public string Email { get; set; }
-
-
-
-
 
         [Column]
         public DateTime? CreateTime { get; set; }
 
-
-
-
-
         [Column]
         public DateTime? LastLoginTime { get; set; }
-
-
-
-
 
         [Column]
         public string LastLoginIP { get; set; }
 
-
-
-
-
         [Column]
         public DateTime? PrveLoginTime { get; set; }
-
-
-
-
 
         [Column]
         public string PrveLoginIP { get; set; }
 
-
-
-
-
         [Column]
         public int? LoginCount { get; set; }
 
-
-
-
-
         [Column]
         public byte? Status { get; set; }
-
-
-
     }
 
+    [TableName("tb_organization")]
+    [PrimaryKey("ID")]
+    [ExplicitColumns]
+    public partial class tb_organization : DefaultConnectionDB.Record<tb_organization>
+    {
+        [Column]
+        public int ID { get; set; }
 
+        [Column]
+        public string OrgName { get; set; }
+
+        [Column]
+        public int? ParentId { get; set; }
+
+        [Column]
+        public sbyte? IsLast { get; set; }
+
+        [Column]
+        public int? Sort { get; set; }
+
+        [Column]
+        public int? Status { get; set; }
+    }
 }
 
 

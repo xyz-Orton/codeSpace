@@ -46,14 +46,14 @@ namespace Code.MvcUI.Controllers
             UserBLL userBll = new UserBLL();
             try
             {
-                tb_User user = userBll.GetUserNoDelete(loginName, Encrypt.MD5(loginPwd));
+                tb_user user = userBll.GetUserNoDelete(loginName, Encrypt.MD5(loginPwd));
 
                 if (user == null)
                     return Json(new { Message = "用户名或密码不正确.", Success = flag });
 
-                if (user.Status == (int)UserStatusEnum.Forbidden)
+                if (user.Status == (int)StatusEnum.Forbidden)
                     return Json(new { Message = "该帐号已被禁用，不能登录.", Success = flag });
-                else if (user.Status == (int)UserStatusEnum.Deleted)
+                else if (user.Status == (int)StatusEnum.Deleted)
                     return Json(new { Message = "该帐号已被删除，不能登录.", Success = flag });
 
                 flag = true;

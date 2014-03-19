@@ -1,19 +1,18 @@
-
-$(window.parent.document).find("#main").load(function () {
+$(function () {
     var main = $(window.parent.document).find("#main");
     var mainLeft = $(window.parent.document).find(".left");
-    var thisheight = $(window.parent.document).height();
-
+    //var thisheight = $(window.parent.document).height();
+    var thisheight = window.parent.window.screen.height;//Ò³Ãæ¸ß¶È
     if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {
         $(window.parent.document).find("body").height(thisheight - 200);
     } else {
-        main.height(thisheight - 200);
+        var setHeight = (thisheight - 200);
+        mainLeft.height(setHeight);
+        main.height(setHeight);
     }
 
-});
-$(function () {
     $('.table').each(function () {
-        $(this).find('tr:odd').find('td').css("background", "#f1f1f1");
+        $(this).find('tr:odd').find("td").css("background", "#f1f1f1");
     });
 
 }) 

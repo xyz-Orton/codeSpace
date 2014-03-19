@@ -1,0 +1,117 @@
+﻿@using Code.Entities;
+@{
+    ViewBag.Title = "用户管理";
+}
+@model GoMusic.MvcPager.PagedList<tb_user>
+<div class="body">
+    <div class="top_subnav">
+        CMS内容管理平台 ＞ 用户管理</div>
+    <p class="line" style="margin-top: 0;">
+    </p>
+    @using (Html.BeginForm("Index", "UserManage", new { page = 0 }, FormMethod.Get, new { id = "myForm" }))
+    {
+        <div class="filed fl title_h2" style="height: 8px; padding-right: 5px;">
+        </div>
+        <div class="filed fl">
+            <label>
+                用户名：</label>
+            <input type="text" class="text" maxlength="20" id="UserName" name="UserName">
+        </div>
+        <div class="filed fl">
+            <label>
+                状态：</label>
+            <select style="height: 25px; line-height: 25px; width: 90px;" id="selSex" name="selSex">
+                <option>--请选择--</option>
+                <option value="1">启用</option>
+                <option value="3">禁用</option>
+            </select>
+        </div>
+        <div class="filed fl" style="padding-left: 10px;">
+            <input class="button" type="submit" value="" />
+        </div>
+    }
+    <div class="tablelist">
+        <table class="table">
+            <tr>
+                <th colspan="9" class="top_th">
+                    <a href="#" class="add"><em>添加</em><span></span></a><a href="#" class="edit"><em>编辑</em><span></span></a><a
+                        href="#" class="tongji"><em>统计</em><span></span></a><a href="#" class="sort"><em>排序</em><span></span></a>
+                </th>
+            </tr>
+            <tr>
+                <th width="30">
+                    ID
+                </th>
+                <th width="100">
+                    用户名
+                </th>
+                <th width="100">
+                    登录名
+                </th>
+                <th width="100">
+                    组织结构
+                </th>
+                <th width="50">
+                    性别
+                </th>
+                <th width="100">
+                    Email
+                </th>
+                <th width="100">
+                    联系方式
+                </th>
+                <th width="40">
+                    状态
+                </th>
+                <th width="50">
+                    操作
+                </th>
+            </tr>
+            @if (Model != null)
+            {
+                foreach (var i in Model)
+                {
+                <tr>
+                    <td>
+                        @i.ID
+                    </td>
+                    <td>
+                        @i.UserName
+                    </td>
+                    <td>
+                        @i.LoginName
+                    </td>
+                    <td>
+                        @i.OrgName
+                    </td>
+                    <td>
+                        @(i.Sex.HasValue ? i.Sex.Value == 1 ? "男" : "女" : "")
+                    </td>
+                    <td>
+                        @i.Email
+                    </td>
+                    <td>
+                        @i.Telephone
+                    </td>
+                    <td>
+                        @(i.Status.HasValue ? i.Status.Value == 1 ? "启用" : "禁用" : "")
+                    </td>
+                    <td>
+                        <a href="">编辑</a>&nbsp;&nbsp;
+                        <a href="">删除</a>
+                    </td>
+                </tr>
+                }
+            }
+            else
+            { 
+                <td colspan="9" align="center">
+                    暂无相关数据
+                </td>
+            }
+        </table>
+    </div>
+    <div class="page">
+        @Html.Partial("UCPagerDiv", Model)
+    </div>
+</div>

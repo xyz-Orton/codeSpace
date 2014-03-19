@@ -9,7 +9,9 @@ body{
 ul{
 	list-style-type:none;
 }
-a{
+a
+{
+    color:Blue;
 	text-decoration:none;
 }
 img{
@@ -357,11 +359,9 @@ p a{
 	font-weight:bold;	
 }
 .filed label{
-	position:absolute;
 	padding:6px 3px 6px 0px;
 }
 .filed input {
-	margin-left:50px;
 	padding:3px;
 	border-top:1px solid #bebebe;
 	border-left:1px solid #bebebe;
@@ -487,3 +487,13 @@ p a{
 	background:none;
 }
 .tablelist{padding-top:23px;}
+
+/*·ÖÒ³*/
+/*·ÖÒ³*/
+.pagingDiv{ clear:both; height:30px; margin-top:15px;}
+.pagingLink{ clear:both;height:100%; text-align:right; color:#404040; font-size:12px; padding-right:20px;}
+.pagingLink div{ float:right;}
+.pagingLink div{margin: 3px;padding: 3px;text-align: center; text-align:right;}
+.pagingLink a {border-color: #9AAFE5;border-right: 1px solid #9AAFE5;border-style: solid;border-width: 1px;color: #2E6AB1;margin-right: 5px;padding: 2px 5px;text-decoration: none;}
+.pagingLink span.current {background-color: #2E6AB1; border-color: navy;border-right: 1px solid navy;border-style: solid;border-width: 1px;color: #FFFFFF;font-weight: bold;margin-right: 2px;padding: 2px 5px;}
+.pagingLink span.disabled {border-color: #929292;border-right: 1px solid #929292;border-style: solid;border-width: 1px;color: #929292;margin-right: 2px;padding: 2px 5px;}

@@ -34,6 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GoMusic.Entities">
+      <HintPath>..\Lib.Dtp\GoMusic.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="GoMusic.MvcPager">
+      <HintPath>..\Lib.Dtp\GoMusic.MvcPager.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcPager">
+      <HintPath>..\Lib.Dtp\MvcPager.dll</HintPath>
+    </Reference>
     <Reference Include="PetaPoco, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib.Dtp\PetaPoco.dll</HintPath>
@@ -67,10 +76,12 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\SystemMenu.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -273,7 +284,13 @@
     <Content Include="Content\skins\tpphp.css" />
     <Content Include="Content\skins\tqphp\border.png" />
     <Content Include="Content\skins\tqphp\tqphp_s.png" />
+    <Content Include="Content\artDialog\dialog-config.js" />
+    <Content Include="Content\artDialog\dialog-plus.js" />
+    <Content Include="Content\artDialog\dialog.js" />
+    <Content Include="Content\artDialog\drag.js" />
+    <Content Include="Content\artDialog\popup.js" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\ui-dialog.css" />
     <Content Include="Content\zTree\js\jquery.ztree.all-3.1.js" />
     <Content Include="Content\zTree\js\jquery.ztree.all-3.1.min.js" />
     <Content Include="Content\zTree\js\jquery.ztree.core-3.1.js" />
@@ -374,8 +391,13 @@
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\ForPage\artDialog.js" />
     <Content Include="Scripts\ForPage\iframe.js" />
+    <Content Include="Scripts\ForPage\page_home.js" />
+    <Content Include="Scripts\ForPage\page_logon.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.4.4.min.js" />
     <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\sea.js" />
+    <Content Include="Scripts\seaDialog.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -404,7 +426,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Views\Account\LogOn.cshtml" />
   </ItemGroup>
@@ -430,6 +451,12 @@
       <Project>{CD12E8EA-180D-4C74-BCED-99CD8323EEC6}</Project>
       <Name>Code.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserManage\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\UCPagerDiv.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

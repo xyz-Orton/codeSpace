@@ -1,0 +1,12 @@
+﻿@using GoMusic.MvcPager
+@model GoMusic.MvcPager.IPagedList
+<div class="pagingDiv">
+    <div class="pagingLink">
+        @Html.Pager(Model, new GoMusic.MvcPager.PagerOptions() { PageIndexParameterName = "page", NextPageText = ">", PrevPageText = "<", ShowFirstLast = false, ShowMorePagerItems = true, CurrentPagerItemWrapperFormatString = "<span class='current'>{0}</span>", NumericPagerItemCount = 7, AlwaysShowFirstLastPageNumber = true, SeparatorHtml = "" })
+        @if (Model != null && Model.TotalItemCount > 0)
+        {
+            <div>
+                共&nbsp;<span class="tc-blue">@(Model.TotalItemCount % Model.PageSize == 0 ? (Model.TotalItemCount / Model.PageSize) : (Model.TotalItemCount / Model.PageSize + 1))</span>&nbsp;页</div>
+        }
+    </div>
+</div>

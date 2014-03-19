@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Code.MvcUI.Models;
 
 namespace Code.MvcUI.Controllers
 {
@@ -23,6 +24,7 @@ namespace Code.MvcUI.Controllers
 
         public ActionResult Table()
         {
+            ViewBag.Menu = Menu.Home;
             return View();
         }
     }

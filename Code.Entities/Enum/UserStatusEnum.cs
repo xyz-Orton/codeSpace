@@ -8,7 +8,7 @@ namespace Code.Entities
     /// <summary>
     /// 用户状态
     /// </summary>
-    public enum UserStatusEnum
+    public enum StatusEnum
     {
         /// <summary>
         /// 正常状态
@@ -16,13 +16,13 @@ namespace Code.Entities
         Normal = 1,
 
         /// <summary>
-        /// 禁用
-        /// </summary>
-        Forbidden = 2,
-
-        /// <summary>
         /// 逻辑删除
         /// </summary>
-        Deleted = 3
+        Deleted = 2,
+
+        /// <summary>
+        /// 禁用
+        /// </summary>
+        Forbidden = 3
     }
 }
