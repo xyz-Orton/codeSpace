@@ -393,6 +393,7 @@
     <Content Include="Scripts\ForPage\iframe.js" />
     <Content Include="Scripts\ForPage\page_home.js" />
     <Content Include="Scripts\ForPage\page_logon.js" />
+    <Content Include="Scripts\ForPage\page_user.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.4.4.min.js" />
     <Content Include="Scripts\jquery.js" />

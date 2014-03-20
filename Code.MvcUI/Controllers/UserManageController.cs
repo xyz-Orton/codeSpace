@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Code.MvcUI.Models;
 using Code.Entities;
 using Code.BLL;
+using Code.Utilities;
 
 namespace Code.MvcUI.Controllers
 {
@@ -28,5 +29,25 @@ namespace Code.MvcUI.Controllers
             return View(modelResult);
         }
 
+        [HttpPost]
+        public ActionResult Delete(int? ID)
+        {
+            if (!ID.HasValue || ID.Value <= 0)
+            {
+                return Json(new ResultMessage() { Success = false, Message = "未找到该ID,删除失败！" });
+            }
+            bool Success = true;
+            string Message = "";
+            try
+            {
+                _userBLL.DeleteUserInfo(ID.Value);
+            }
+            catch (Exception ex)
+            {
+                Success = false;
+                Message = "操作异常，删除失败！";
+            }
+            return Json(new ResultMessage() { Success = Success, Message = Message });
+        }
     }
 }

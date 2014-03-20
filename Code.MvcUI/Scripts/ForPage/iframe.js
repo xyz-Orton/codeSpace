@@ -1,18 +1,30 @@
 $(function () {
-    var main = $(window.parent.document).find("#main");
-    var mainLeft = $(window.parent.document).find(".left");
-    //var thisheight = $(window.parent.document).height();
-    var thisheight = window.parent.window.screen.height;//Ò³Ãæ¸ß¶È
-    if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {
-        $(window.parent.document).find("body").height(thisheight - 200);
-    } else {
-        var setHeight = (thisheight - 200);
-        mainLeft.height(setHeight);
-        main.height(setHeight);
-    }
-
     $('.table').each(function () {
         $(this).find('tr:odd').find("td").css("background", "#f1f1f1");
     });
 
-}) 
+    $(".allCheck").on("click", function () {
+        var _this = $(this);
+        if (_this.attr("checked")) {
+            _this.parent().parent().parent().find("td .singleCheck").attr("checked", 'true');
+        }
+        else {
+            _this.parent().parent().parent().find("td .singleCheck").removeAttr("checked");
+        }
+    });
+
+    $(".singleCheck").on("click", function () {
+        var _this = $(this);
+        if (!_this.attr("checked")) {
+            _this.parent().parent().parent().find("th .allCheck").removeAttr("checked");
+        }
+    });
+})
+
+function getAllCheckID() {
+    var arr = new Array();
+    $(".table .singleCheck[checked]").each(function () {
+        arr.push($(this).val());
+    });
+    return arr;
+}

@@ -93,5 +93,16 @@ namespace Code.BLL
                 return result.Items;
             }
         }
+
+        /// <summary>
+        /// 删除用户信息  物理删除
+        /// </summary>
+        public void DeleteUserInfo(int ID)
+        {
+            using (var db = DataBaseHelper.GetDataBase())
+            {
+                db.Delete<tb_user>(ID);
+            }
+        }
     }
 }

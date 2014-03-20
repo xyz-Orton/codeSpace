@@ -12,6 +12,28 @@
         $(this).hide();
         $("#side_switch").show();
     })
+
+    var main = $("#main");
+    var mainLeft = $(".left");
+    //var thisheight = $(window.parent.document).height();
+    var thisheight = window.screen.height; //页面高度
+    if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {
+        $("body").height(thisheight - 200);
+    } else {
+        var setHeight = (thisheight - 200);
+        mainLeft.height(setHeight);
+        main.height(setHeight);
+    }
+
+    $("#LogOff").on("click", function () {
+        var hnLogOff = $("#hnLogOff").val();
+        //if (confirm("是否确定退出？")) {
+        //    window.location = hnLogOff;
+        //}
+        seaDialog.confirm("是否确定退出?", 150, function () {
+            window.location = hnLogOff;
+        });
+    });
 });
 
 function openMsgWindow() {
@@ -33,10 +55,3 @@ function openMsgWindow() {
         content: "<div style='line-height:25px'>您有新的站内信<Br><a href=\"http://www.uimaker.com\">点此阅读</a></div>"
     });
 }
-
-$("#LogOff").on("click", function LogOff() {
-    var hnLogOff = $("#hnLogOff").val();
-    if (confirm("是否确定退出？")) {
-        window.location = hnLogOff;
-    }
-});
