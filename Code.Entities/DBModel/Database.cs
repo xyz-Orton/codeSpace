@@ -185,7 +185,7 @@ namespace Code.Entities
         public int? ParentId { get; set; }
 
         [Column]
-        public sbyte? IsLast { get; set; }
+        public byte? IsLast { get; set; }
 
         [Column]
         public int? Sort { get; set; }

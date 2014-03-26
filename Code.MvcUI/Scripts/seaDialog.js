@@ -49,7 +49,7 @@ var seaDialog = {
             d.showModal();
         });
     },
-    open: function (title, url, width, height) {
+    open: function (title, url, width, height, funcName) {
         seajs.use(["jquery", "./Content/artDialog/dialog-plus.js"], function ($, dialog) {
             window.dialog = dialog;
 
@@ -59,7 +59,9 @@ var seaDialog = {
                 width: width,
                 height: height,
                 onclose: function () {
-                    alert('123');
+                    if (typeof (eval(funcName)) == "function") {
+                        funcName();
+                    }
                 },
                 oniframeload: function () {
 

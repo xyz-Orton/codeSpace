@@ -9,9 +9,6 @@
         ID = userData.ID.ToString();
         Name = userData.UserName;
     }
-    Menu sMenu = ViewBag.Menu != null ? (Menu)ViewBag.Menu : Menu.None;
-    string strNormal = "class=\"\"";
-    string strSelected = "class=\"selected\"";
 }
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -38,15 +35,15 @@
         </div>
         <div class="top_nav">
             <ul>
-                <li><a @Html.Raw(sMenu == Menu.Home ? strSelected : strNormal) href="#">后台首页</a></li>
-                <li><a @Html.Raw(sMenu == Menu.Home ? strSelected : strNormal) href="#">网站首页管理</a></li>
-                <li><a @Html.Raw(sMenu == Menu.Home ? strSelected : strNormal) href="@Url.Action("Table", "Home")" target="main">
+                <li><a class="selected" href="#">后台首页</a></li>
+                <li><a href="#">网站首页管理</a></li>
+                <li><a href="@Url.Action("Table", "Home")" target="main">
                     菜单设置</a></li>
                 <li><a href="#">文章管理</a></li>
                 <li><a href="#">采集设置</a></li>
                 <li><a href="#">广告管理</a></li>
                 <li><a href="#">数据管理</a></li>
-                <li><a @Html.Raw(sMenu == Menu.UserList ? strSelected : strNormal) href="@Url.Action("Index", "UserManage")" target="main">
+                <li><a href="@Url.Action("Index", "UserManage")" target="main">
                     用户管理</a></li>
                 <li><a href="#">系统设置</a></li>
             </ul>
@@ -85,10 +82,5 @@
         <iframe style="overflow: visible" id="main" name="main" src="@Url.Action("Default", "Home")" frameborder="0"
         width="100%" scrolling="yes" height="100%"></iframe>
     </div>
-    <script type="text/javascript">
-        $("#btn2").on("click", function () {
-            seaDialog.open("table", '@Url.Action("table", "Home")', 700, 400);
-        });
-    </script>
 </body>
 </html>
